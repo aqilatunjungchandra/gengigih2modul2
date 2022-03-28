@@ -2,17 +2,7 @@
   font-family: sans-serif;
   text-align: center;
 }
-.Header {
-  border-bottom: #555 4px solid;
-  background-color: orange;
-}
-.Header img {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-top: -2px;
-  margin-bottom : 5px;
-}
+
 .Header h1 {
   text-align: left;
   line-height: 5px;
