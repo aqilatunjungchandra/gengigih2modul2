@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { urlGet } from "../components/data/spotifycon";
+import { urlGet } from "../data/spotifyconf";
 import Button from "../components/button";
-import Card from "../components/card.js";
+import Card from "../components/card";
 import Input from "../components/input";
 class Spotify extends Component {
   state = {
@@ -43,9 +43,11 @@ class Spotify extends Component {
           avaliable: true,
         });
       })
-      .catch(() => {
+      .catch((error) => {
         alert("Request Gagal");
-        if (this.state.token === "") {
+        if (error.response.status === 401 && error.response) {
+          window.localStorage.removeItem("token");
+          window.localStorage.removeItem("auth");
           window.location.replace("/");
         }
       });
